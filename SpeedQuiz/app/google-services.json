@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1085046349683",
+    "project_id": "speedapp-312",
+    "storage_bucket": "speedapp-312.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085046349683:android:76d81bc80ff678eb646f06",
+        "android_client_info": {
+          "package_name": "pt.ipp.estg.speedquiz.FireBaseAuth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085046349683-a6p8rnk3etlmak3fvghd718dt61vg44b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJZ12HbdzD8OQTwihD4zk1MGLV6AwX0dw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085046349683-a6p8rnk3etlmak3fvghd718dt61vg44b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
