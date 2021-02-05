@@ -1,20 +1,43 @@
-package pt.ipp.estg.speedquiz.Models;
+package pt.ipp.estg.speedquiz.Models.DriversApi;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
 public class Driver {
-    private int id;
+
+    @SerializedName("driverId")
+    @Expose
+    private String driverId;
+    @SerializedName("permanentNumber")
+    @Expose
     private String permanentNumber;
+    @SerializedName("code")
+    @Expose
     private String code;
-    private String  url;
+    @SerializedName("url")
+    @Expose
+    private String url;
+    @SerializedName("givenName")
+    @Expose
     private String givenName;
+    @SerializedName("familyName")
+    @Expose
     private String familyName;
-    private Date dateOfBirth;
+    @SerializedName("dateOfBirth")
+    @Expose
+    private String dateOfBirth;
+    @SerializedName("nationality")
+    @Expose
     private String nationality;
 
 
-    public Driver (int id, String permanentNumber, String code, String url, String givenName, String familyName, Date dateOfBirth, String nationality) {
-        this.id = id;
+    public Driver () {
+    }
+
+    public Driver (String driverId, String permanentNumber, String code, String url, String givenName, String familyName, String dateOfBirth, String nationality) {
+        this.driverId = driverId;
         this.permanentNumber = permanentNumber;
         this.code = code;
         this.url = url;
@@ -24,13 +47,12 @@ public class Driver {
         this.nationality = nationality;
     }
 
-
-    public int getId () {
-        return id;
+    public String getDriverId () {
+        return driverId;
     }
 
-    public void setId (int id) {
-        this.id = id;
+    public void setDriverId (String driverId) {
+        this.driverId = driverId;
     }
 
     public String getPermanentNumber () {
@@ -73,11 +95,11 @@ public class Driver {
         this.familyName = familyName;
     }
 
-    public Date getDateOfBirth () {
+    public String getDateOfBirth () {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth (Date dateOfBirth) {
+    public void setDateOfBirth (String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

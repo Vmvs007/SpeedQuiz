@@ -1,5 +1,8 @@
 package pt.ipp.estg.speedquiz.Services;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -8,9 +11,13 @@ public class F1_Service {
     private static F1_Service mInstance;
     private Retrofit retrofit;
     public F1_Service() {
+
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
     }
 

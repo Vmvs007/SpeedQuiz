@@ -3,6 +3,8 @@ package pt.ipp.estg.speedquiz.Models;
 import java.sql.Time;
 import java.util.Date;
 
+import pt.ipp.estg.speedquiz.Models.CircuitsApi.Circuit;
+
 public class Schedules {
 
     private int position;
@@ -47,16 +49,16 @@ class Race {
     private int round;
     private String  url;
     private String raceName;
-    private Circuits circuits;
+    private Circuit circuit;
     private Date date;
     private Time time;
 
-    public Race (int season, int round, String url, String raceName, Circuits circuits, Date date, Time time) {
+    public Race (int season, int round, String url, String raceName, Circuit circuit, Date date, Time time) {
         this.season = season;
         this.round = round;
         this.url = url;
         this.raceName = raceName;
-        this.circuits = circuits;
+        this.circuit = circuit;
         this.date = date;
         this.time = time;
     }
@@ -93,12 +95,12 @@ class Race {
         this.raceName = raceName;
     }
 
-    public Circuits getCircuits () {
-        return circuits;
+    public Circuit getCircuit () {
+        return circuit;
     }
 
-    public void setCircuits (Circuits circuits) {
-        this.circuits = circuits;
+    public void setCircuit (Circuit circuit) {
+        this.circuit = circuit;
     }
 
     public Date getDate () {

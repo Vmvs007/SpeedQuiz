@@ -2,6 +2,9 @@ package pt.ipp.estg.speedquiz.Models;
 
 import java.util.List;
 
+import pt.ipp.estg.speedquiz.Models.ConstructorsApi.Constructor;
+import pt.ipp.estg.speedquiz.Models.DriversApi.DriverTable;
+
 public class Results {
     private int season;
     private int round;
@@ -45,15 +48,15 @@ class Position{
     private String positionText;
     private int points;
     private int wins;
-    private Driver driver;
+    private DriverTable driverTable;
     private Constructor constructor;
 
-    public Position (int position, String positionText, int points, int wins, Driver driver, Constructor constructor) {
+    public Position (int position, String positionText, int points, int wins, DriverTable driverTable, Constructor constructor) {
         this.position = position;
         this.positionText = positionText;
         this.points = points;
         this.wins = wins;
-        this.driver = driver;
+        this.driverTable = driverTable;
         this.constructor = constructor;
     }
 
@@ -90,12 +93,12 @@ class Position{
         this.wins = wins;
     }
 
-    public Driver getDriver () {
-        return driver;
+    public DriverTable getDriverTable () {
+        return driverTable;
     }
 
-    public void setDriver (Driver driver) {
-        this.driver = driver;
+    public void setDriverTable (DriverTable driverTable) {
+        this.driverTable = driverTable;
     }
 
     public Constructor getConstructor () {
