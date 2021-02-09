@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import pt.ipp.estg.speedquiz.Models.CircuitsApi.CircuitTable;
 import pt.ipp.estg.speedquiz.Models.ConstructorsApi.ConstructorTable;
 import pt.ipp.estg.speedquiz.Models.DriversApi.DriverTable;
+import pt.ipp.estg.speedquiz.Models.Results.RaceTable;
 
 public class MRData {
 
@@ -36,22 +37,15 @@ public class MRData {
     @SerializedName("CircuitTable")
     @Expose
     private CircuitTable circuitTable;
-
+    @SerializedName("RaceTable")
+    @Expose
+    private RaceTable raceTable;
 
     public MRData () {
     }
 
-    public MRData (String xmlns, String series, String url, String limit, String offset, String total, ConstructorTable constructorTable) {
-        this.xmlns = xmlns;
-        this.series = series;
-        this.url = url;
-        this.limit = limit;
-        this.offset = offset;
-        this.total = total;
-        this.constructorTable = constructorTable;
-    }
-
-    public MRData (String xmlns, String series, String url, String limit, String offset, String total, DriverTable driverTable) {
+    public MRData(String xmlns, String series, String url, String limit, String offset, String total, DriverTable driverTable) {
+        super();
         this.xmlns = xmlns;
         this.series = series;
         this.url = url;
@@ -61,14 +55,17 @@ public class MRData {
         this.driverTable = driverTable;
     }
 
-    public MRData (String xmlns, String series, String url, String limit, String offset, String total, CircuitTable circuitTable) {
+    public MRData (String xmlns, String series, String url, String limit, String offset, String total, DriverTable driverTable, ConstructorTable constructorTable, CircuitTable circuitTable, RaceTable raceTable) {
         this.xmlns = xmlns;
         this.series = series;
         this.url = url;
         this.limit = limit;
         this.offset = offset;
         this.total = total;
+        this.driverTable = driverTable;
+        this.constructorTable = constructorTable;
         this.circuitTable = circuitTable;
+        this.raceTable = raceTable;
     }
 
     public ConstructorTable getConstructorTable () {
@@ -133,5 +130,13 @@ public class MRData {
 
     public void setDriverTable (DriverTable driverTable) {
         this.driverTable = driverTable;
+    }
+
+    public RaceTable getRaceTable() {
+        return raceTable;
+    }
+
+    public void setRaceTable(RaceTable raceTable) {
+        this.raceTable = raceTable;
     }
 }

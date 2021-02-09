@@ -3,11 +3,12 @@ package pt.ipp.estg.speedquiz.Services;
 import java.util.List;
 
 import pt.ipp.estg.speedquiz.Models.CircuitsApi.Circuit;
+import pt.ipp.estg.speedquiz.Models.CircuitsApi.CircuitList;
 import pt.ipp.estg.speedquiz.Models.ConstructorsApi.Constructor;
 
 import pt.ipp.estg.speedquiz.Models.DriversApi.DriverInfo;
 import pt.ipp.estg.speedquiz.Models.DriversApi.DriverTable;
-import pt.ipp.estg.speedquiz.Models.Results;
+import pt.ipp.estg.speedquiz.Models.Results.ResultsList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -16,13 +17,11 @@ import retrofit2.http.Query;
 public interface Service {
 
     @GET("{year}/drivers.json")
-    Call<List<DriverTable>> getDriversByYear(
-            @Path("year") int year,
-            @Query("driverid") int name,
-            @Query("round") int round);
+    Call<DriverInfo> getDriversByYear(
+            @Path("year") int year);
 
     @GET("{year}/{round}/drivers.json")
-    Call<List<DriverTable>> getDriversByYearAndRound(
+    Call<DriverInfo> getDriversByYearAndRound(
             @Path("year") int year,
             @Path("round") int round);
 
@@ -32,7 +31,7 @@ public interface Service {
             @Path("constructorid") String name);
 
     @GET("{year}/constructors.json")
-    Call<List<Constructor>> getConstructorsByYearAndRound(
+    Call<CircuitList> getConstructorsByYearAndRound(
             @Query("year") int year,
             @Query("round") int round);
 
@@ -40,11 +39,11 @@ public interface Service {
     Call<Constructor> getConstructorById(
             @Path("constructorid") String name);
 
-    @GET("driverStandings.json")
-    Call<List<Results>> getResultsByYear(@Query("season") int year);
+    @GET("{season}/results.json")
+    Call<ResultsList> getResultsByYear(@Path("season") int year);
 
     @GET("circuits.json")
-    Call<List<Circuit>> getCircuits();
+    Call<CircuitList> getCircuits();
 
 
     @GET("drivers/{driverid}.json")
