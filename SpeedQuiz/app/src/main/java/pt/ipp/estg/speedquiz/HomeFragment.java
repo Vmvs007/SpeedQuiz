@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -105,7 +106,18 @@ public class HomeFragment extends Fragment {
         TextView nome=mContentView.findViewById(R.id.nome);
         TextView timeday=mContentView.findViewById(R.id.timeday);
         nome.setText(mUser.getString("name", ""));
+        Button button= mContentView.findViewById(R.id.driversButton);
 
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                Fragment fragment= new RecyclerDrivers();
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, fragment)
+                        .commit();
+            }
+        });
         currentTime = Calendar.getInstance().getTime();
         DateFormat dateFormat1 = new SimpleDateFormat("HH");
         Integer hora = Integer.parseInt(dateFormat1.format(currentTime));

@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -26,7 +27,9 @@ import com.luseen.spacenavigation.SpaceOnClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.ipp.estg.speedquiz.FragmentDetails;
 import pt.ipp.estg.speedquiz.HomeFragment;
+import pt.ipp.estg.speedquiz.Models.DriversApi.Driver;
 import pt.ipp.estg.speedquiz.PerfilFragment;
 import pt.ipp.estg.speedquiz.QuizFragment;
 import pt.ipp.estg.speedquiz.R;
@@ -208,5 +211,16 @@ default:
 @Override
 public void onBackPressed() {
 
+        }
+
+        public void sendTextToFragment(Driver driver) {
+                Bundle args = new Bundle();
+                args.putString("Url", driver.getUrl().toString());
+                Fragment resultFragment = new FragmentDetails();
+                resultFragment.setArguments(args);
+
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, resultFragment);
+                transaction.commit();
         }
 }

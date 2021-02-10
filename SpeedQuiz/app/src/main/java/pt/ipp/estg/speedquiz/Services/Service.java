@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 
 public interface Service {
 
-    @GET("{year}/drivers.json")
+    @GET("{year}/drivers.json?limit=10")
     Call<DriverInfo> getDriversByYear(
             @Path("year") int year);
 

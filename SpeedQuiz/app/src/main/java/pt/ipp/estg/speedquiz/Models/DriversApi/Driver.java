@@ -110,4 +110,18 @@ public class Driver {
     public void setNationality (String nationality) {
         this.nationality = nationality;
     }
+
+    @Override
+    public String toString () {
+        return "Driver{" +
+                "driverId='" + driverId + '\'' +
+                ", permanentNumber='" + permanentNumber + '\'' +
+                ", code='" + code + '\'' +
+                ", url='" + url + '\'' +
+                ", givenName='" + givenName + '\'' +
+                ", familyName='" + familyName + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", nationality='" + nationality + '\'' +
+                '}';
+    }
 }
