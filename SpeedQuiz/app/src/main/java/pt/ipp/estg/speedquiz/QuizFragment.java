@@ -318,7 +318,7 @@ public class QuizFragment extends Fragment {
                             QuestionModel questionModel= new QuestionModel();
                             String quest1 = "Quem venceu o circuito "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getSeason()+" "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+  "?";
                             String quest2 = "Onde decorre o circuito "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getSeason()+" "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+ "?";
-                            String quest3 = "Em que data se realizou o circuito " +response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+  "?";
+                            String quest3 = "Em que data se realizou o circuito " +response.body().getMRData().getRaceTable().getRaces().get(posicao).getSeason()+" "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+  "?";
                             if(i==0){
                                 questionModel.setQuestion(quest1);
                                 questionModel.setOptA(driverList.get(posicao).getResults().get(5).getDriver().getGivenName()+" "+driverList.get(posicao).getResults().get(5).getDriver().getFamilyName());
