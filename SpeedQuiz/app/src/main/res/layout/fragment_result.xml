@@ -129,7 +129,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#06133C"
-                android:clickable="true"
                 android:src="@drawable/abc_vector_test" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -138,8 +137,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#011560"
-                android:clickable="true"
-                android:src="@drawable/com_facebook_button_like_icon_selected" />
+                android:src="@drawable/ic_person_black_24dp" />
 
         </LinearLayout>
 

@@ -119,7 +119,7 @@ public class PerfilFragment extends Fragment {
         edit=mContentView.findViewById(R.id.button8);
         calendar= Calendar.getInstance();
 
-        utilizadorViewModel.getUtilizadorList().observe(this, new Observer<List<Utilizador>>() {
+        utilizadorViewModel.getUtilizadorList().observe(getViewLifecycleOwner(), new Observer<List<Utilizador>>() {
             @Override
             public void onChanged(List<Utilizador> eventList) {
                 utilList = eventList;

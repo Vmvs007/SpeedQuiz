@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="413dp"
-            android:layout_height="160dp"
-            android:background="@color/colorPrimary"
+            android:layout_height="120dp"
+            android:background="#003039"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -25,8 +25,8 @@
         <ImageView
             android:id="@+id/imageView11"
             android:layout_width="413dp"
-            android:layout_height="160dp"
-            android:background="@color/colorPrimary"
+            android:layout_height="130dp"
+            android:background="#003039"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

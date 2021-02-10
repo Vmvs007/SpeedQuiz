@@ -112,11 +112,11 @@ public class HomeFragment extends Fragment {
         String tipodia="Good Day,";
 
         if (hora>6 && hora<13){
-            tipodia="Good Morning,";
+            tipodia="Bom dia,";
         }else if (hora>12 && hora<20){
-            tipodia="Good Afternoon,";
+            tipodia="Boa tarde,";
         }else if ((hora>19 && hora<24)||(hora>=0 && hora<7) ){
-            tipodia="Good Night,";
+            tipodia="Boa noite,";
         }
 
         timeday.setText(tipodia);

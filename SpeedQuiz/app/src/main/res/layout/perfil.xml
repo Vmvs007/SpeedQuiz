@@ -84,12 +84,13 @@
             android:textColor="#012222"
             android:inputType="textPersonName"/>
 
-        <ImageView
+
+        <Button
             android:id="@+id/button10"
             android:layout_width="40dp"
             android:layout_height="32dp"
-            app:srcCompat="@drawable/ic_date_range_black_24dp"
-            app:tint="#012222" />
+            android:background="@drawable/ic_date_range_black_24dp"
+            android:backgroundTint="#012222" />
     </LinearLayout>
 
     <LinearLayout

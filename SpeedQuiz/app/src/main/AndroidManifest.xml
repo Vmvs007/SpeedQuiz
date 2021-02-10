@@ -16,6 +16,7 @@
         android:theme="@style/Theme.AppCompat"
         android:usesCleartextTraffic="true">
         <activity android:name=".Quiz" />
+        <activity android:name=".FireBaseAuth.MenuActivity"/>
         <activity android:name=".FireBaseAuth.FireBaseAuth" />
         <activity android:name=".FireBaseAuth.BasicActivity" />
         <activity android:name=".MainActivity">

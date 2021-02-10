@@ -88,7 +88,7 @@ public class ResultFragment extends Fragment {
             public void onClick (View v) {
                 getFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fragment_container_view_tag, new QuizFragment())
+                        .replace(R.id.fragment_container, new QuizFragment())
                         .commit();
             }
         });
@@ -97,7 +97,7 @@ public class ResultFragment extends Fragment {
               public void onClick (View v) {
                   getFragmentManager()
                           .beginTransaction()
-                          .replace(R.id.fragment_container_view_tag, new HomeFragment())
+                          .replace(R.id.fragment_container, new HomeFragment())
                           .commit();
               }
           });

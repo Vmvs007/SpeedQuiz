@@ -20,9 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="#003039"
-            app:menu="@menu/top_app_bar"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Bem-vindo" />
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -31,7 +29,7 @@
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="542dp"></FrameLayout>
+            android:layout_height="542dp" />
 
     </LinearLayout>
 
@@ -42,18 +40,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        app:active_item_color="@color/colorPrimaryDark"
+        app:active_centre_button_background_color="#003039"
+        app:active_centre_button_icon_color="@color/colorAccent"
+        app:active_item_color="#003039"
         app:centre_button_color="@color/colorAccent"
+        app:centre_button_icon="@drawable/ic_home_white_24dp"
+        app:inactive_centre_button_icon_color="@color/colorPrimary"
         app:inactive_item_color="@color/colorAccent"
         app:space_background_color="@color/colorPrimary"
-        app:centre_button_icon="@drawable/ic_home_white_24dp"
-        app:active_centre_button_background_color="@color/colorPrimaryDark"
-        app:active_centre_button_icon_color="@color/colorAccent"
-        app:inactive_centre_button_icon_color="@color/colorPrimary"
-        app:space_item_icon_size="24dp"
         app:space_item_icon_only_size="24dp"
-        app:space_item_text_size="5dp"
-        />
+        app:space_item_icon_size="24dp"
+        app:space_item_text_size="5dp" />
 
 
 

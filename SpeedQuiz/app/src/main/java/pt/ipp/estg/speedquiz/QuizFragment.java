@@ -206,7 +206,7 @@ public class QuizFragment extends Fragment {
 
                     getFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container_view_tag, resultFragment)
+                            .replace(R.id.fragment_container, resultFragment)
                             .commit();
                 }
             }
@@ -316,8 +316,8 @@ public class QuizFragment extends Fragment {
                             int posicao= r.nextInt(response.body().getMRData().getRaceTable().getRaces().size()-0)+0;
                             int opcao=0;
                             QuestionModel questionModel= new QuestionModel();
-                            String quest1 = "Quem venceu o circuito "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+  "?";
-                            String quest2 = "Onde decorre o circuito "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+ "?";
+                            String quest1 = "Quem venceu o circuito "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getSeason()+" "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+  "?";
+                            String quest2 = "Onde decorre o circuito "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getSeason()+" "+response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+ "?";
                             String quest3 = "Em que data se realizou o circuito " +response.body().getMRData().getRaceTable().getRaces().get(posicao).getCircuit().getCircuitName()+  "?";
                             if(i==0){
                                 questionModel.setQuestion(quest1);

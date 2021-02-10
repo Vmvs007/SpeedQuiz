@@ -10,15 +10,15 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import androidx.fragment.app.Fragment;
 import com.luseen.spacenavigation.SpaceItem;
 import com.luseen.spacenavigation.SpaceNavigationView;
 import com.luseen.spacenavigation.SpaceOnClickListener;
@@ -35,6 +35,9 @@ import pt.ipp.estg.speedquiz.TakeFragment;
 public class MenuActivity extends AppCompatActivity implements TakeFragment.OnFragmentInteractionListener{
 private SpaceNavigationView navigationView;
 private Fragment fragment;
+private  QuizFragment quizFragment;
+private  HomeFragment homeFragment;
+private  PerfilFragment perfilFragment;
 private TextView toolbarText;
 
 public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
@@ -53,33 +56,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
         utilizadorViewModel= ViewModelProviders.of(this).get(UtilizadorViewModel.class);
 
-        //ActivityCompat.requestPermissions(this , new String[]{Manifest.permission.ACCESS_FINE_LOCATION},REQUEST_FINE_LOCATION);
         checkAndRequestPermissions();
-   /*     if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.SEND_SMS)
-                != PackageManager.PERMISSION_GRANTED) {
 
-            // Permission is not granted
-            // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.SEND_SMS)) {
-                // Show an explanation to the user *asynchronously* -- don't block
-                // this thread waiting for the user's response! After the user
-                // sees the explanation, try again to request the permission.
-            } else {
-                // No explanation needed; request the permission
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.SEND_SMS},
-                        0);
-
-
-                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-                // app-defined int constant. The callback method gets the
-                // result of the request.
-            }
-        } else {
-            // Permission has already been granted
-        }*/
 
         PowerManager power=(PowerManager) this.getSystemService(this.POWER_SERVICE);
         PowerManager.WakeLock wakeLock=power.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "myapp:mywakelock");
@@ -88,9 +66,9 @@ protected void onCreate(Bundle savedInstanceState) {
         mEditor = mUser.edit();
 
         utilizadorViewModel.getUtilizadorList().observe(this, new Observer<List<Utilizador>>() {
-@Override
-public void onChanged(List<Utilizador> eventList) {
-        utilList = eventList;
+                @Override
+                public void onChanged(List<Utilizador> eventList) {
+                         utilList = eventList;
         if (utilList.isEmpty()){
         ContactAddDialog addDialog = new ContactAddDialog();
         addDialog.show(getSupportFragmentManager(), "add cont dialog");
@@ -104,15 +82,11 @@ public void onChanged(List<Utilizador> eventList) {
 
 
 
-
-
         Toolbar myToolbar= (Toolbar)findViewById(R.id.toolbarMenu);
         //setSupportActionBar(myToolbar);
 
 
-
         fragment=new HomeFragment();
-
         getSupportFragmentManager()
         .beginTransaction()
         .replace(R.id.fragment_container, fragment)
@@ -124,7 +98,6 @@ public void onChanged(List<Utilizador> eventList) {
         navigationView.addSpaceItem(new SpaceItem("Quiz", R.drawable.ic_videogame_asset_white_24dp));
         navigationView.addSpaceItem(new SpaceItem("Perfil", R.drawable.ic_person_black_24dp));
 
-
         navigationView.showIconOnly();
         navigationView.setCentreButtonSelectable(true);
 
@@ -135,7 +108,7 @@ public void onChanged(List<Utilizador> eventList) {
 @Override
 public void onCentreButtonClick() {
 
-        toolbarText.setText("Home");
+        myToolbar.setTitle("Home");
         fragment=new HomeFragment();
         if (fragment!=null){
         getSupportFragmentManager()
@@ -147,8 +120,8 @@ public void onCentreButtonClick() {
 
 @Override
 public void onItemClick(int itemIndex, String itemName) {
-        toolbarText.setText(itemName);
 
+        myToolbar.setTitle(itemName);
         switch (itemIndex){
         case 0:
         fragment=new QuizFragment();
@@ -157,28 +130,32 @@ public void onItemClick(int itemIndex, String itemName) {
         fragment=new PerfilFragment();
         break;
         }
-        setFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
         }
 
 @Override
 public void onItemReselected(int itemIndex, String itemName) {
+
         switch (itemIndex){
         case 0:
-        fragment=new QuizFragment();
+       fragment=new QuizFragment();
         break;
         case 1:
         fragment=new PerfilFragment();
         break;
         }
-        setFragment();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
         }
         });
 
 
-
-
-
-        }
+}
 
 private  boolean checkAndRequestPermissions() {
         int permissionSendMessage = ContextCompat.checkSelfPermission(this,
@@ -204,6 +181,7 @@ public void setFragment(){
         .beginTransaction()
         .replace(R.id.fragment_container, fragment)
         .commit();
+
         }
         }
 

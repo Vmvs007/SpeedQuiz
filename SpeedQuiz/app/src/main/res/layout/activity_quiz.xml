@@ -10,35 +10,12 @@
     tools:context=".Quiz">
 
 
-
-    <com.google.android.material.appbar.AppBarLayout
+    <FrameLayout
+        android:id="@+id/fragment_container_view_tag"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey_100"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarQuiz"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#003039"
-            app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/abc_vector_test"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="Bem-vindo" />
-
-            <FrameLayout
-                android:id="@+id/fragment_container_view_tag"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
-
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-
-
+    </FrameLayout>
 
 
 </LinearLayout>

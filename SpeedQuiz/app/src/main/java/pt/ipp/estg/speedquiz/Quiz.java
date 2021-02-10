@@ -59,7 +59,7 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        topAppBar= (Toolbar)findViewById(R.id.toolbarQuiz);
+//        topAppBar= (Toolbar)findViewById(R.id.toolbarQuiz);
        // setSupportActionBar(topAppBar);
 
 
@@ -75,13 +75,13 @@ public class Quiz extends AppCompatActivity {
                 .replace(R.id.fragment_container_view_tag, fragment)
                 .commit();
 
-        topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View view) {
-                    Intent intent = new Intent(Quiz.this, MainActivity.class);
-                    startActivity(intent);
-            }
-        });
+//        topAppBar.setNavigationOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick (View view) {
+//                    Intent intent = new Intent(Quiz.this, MainActivity.class);
+//                    startActivity(intent);
+//            }
+//        });
 
 
     }
