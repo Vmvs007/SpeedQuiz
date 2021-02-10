@@ -10,13 +10,15 @@
         android:allowBackup="true"
         android:icon="@drawable/f1_icon"
         android:label="@string/app_name"
+        android:largeHeap="true"
+        android:hardwareAccelerated="false"
         android:roundIcon="@drawable/speedquizlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat"
         android:usesCleartextTraffic="true">
         <activity android:name=".Quiz" />
+        <activity android:name=".FireBaseAuth.FireBaseAuth"/>
         <activity android:name=".FireBaseAuth.MenuActivity"/>
-        <activity android:name=".FireBaseAuth.FireBaseAuth" />
         <activity android:name=".FireBaseAuth.BasicActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

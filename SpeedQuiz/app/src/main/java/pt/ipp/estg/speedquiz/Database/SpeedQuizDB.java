@@ -19,10 +19,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import pt.ipp.estg.speedquiz.DAO.QuestionDAO;
 import pt.ipp.estg.speedquiz.DAO.UtilizadorDao;
+import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
 import pt.ipp.estg.speedquiz.Models.QuestionModel;
-import pt.ipp.estg.speedquiz.Models.Ranking;
-import pt.ipp.estg.speedquiz.Models.UserAnswer;
-import pt.ipp.estg.speedquiz.Utilizador;
 
 @Database(entities = {QuestionModel.class, Utilizador.class},
         version = 1, exportSchema = false)

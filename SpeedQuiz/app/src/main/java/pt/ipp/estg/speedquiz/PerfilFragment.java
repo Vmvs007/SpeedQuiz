@@ -22,6 +22,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
+import pt.ipp.estg.speedquiz.FireBaseAuth.UtilizadorViewModel;
+
 
 public class PerfilFragment extends Fragment {
 

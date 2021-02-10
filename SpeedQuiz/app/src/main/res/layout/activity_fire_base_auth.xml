@@ -30,19 +30,20 @@
             android:text="LOGIN"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="40sp"
-            android:theme="@style/ThemeOverlay.MyTitleText" />
+            android:theme="@style/ThemeOverlay.MyTitleText"
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/status"
             style="@style/ThemeOverlay.MyTextDetail"
             android:text="@string/signed_out"
-            android:visibility="gone"/>
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
-            tools:text="Firebase User ID: 123456789abc"
-            android:visibility="gone"/>
+            android:visibility="invisible"
+            tools:text="Firebase User ID: 123456789abc" />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button"
@@ -51,13 +52,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:visibility="gone"/>
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:visibility="invisible" />
 
 
     </LinearLayout>
@@ -83,9 +84,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/hint_email"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:textColorHint="#000000" />
 
             <EditText
                 android:id="@+id/fieldPassword"
