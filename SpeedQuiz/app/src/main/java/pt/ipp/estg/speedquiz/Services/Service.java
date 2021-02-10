@@ -2,6 +2,7 @@ package pt.ipp.estg.speedquiz.Services;
 
 import java.util.List;
 
+import pt.ipp.estg.speedquiz.DaysWeather;
 import pt.ipp.estg.speedquiz.Models.CircuitsApi.Circuit;
 import pt.ipp.estg.speedquiz.Models.CircuitsApi.CircuitList;
 import pt.ipp.estg.speedquiz.Models.ConstructorsApi.Constructor;
@@ -52,5 +53,11 @@ public interface Service {
 
 
 
+    @GET("forecast")
+    Call<DaysWeather> getWeather(
+            @Query("lat") float lat,
+            @Query("lon") float lon,
+            @Query("appid") String type
+    );
 
 }

@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+        <color name="colorPrimary">#0093E9</color>
+        <color name="colorPrimaryDark">#006094</color>
+        <color name="colorAccent">#FFF</color>
+        <color name="colorRed">#F10000</color>
+        <color name="colorGreen">#05B60A</color>
+
+
+        <color name="grey_100">#F5F5F5</color>
+        <color name="grey_300">#E0E0E0</color>
+        <color name="grey_500">#9E9E9E</color>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

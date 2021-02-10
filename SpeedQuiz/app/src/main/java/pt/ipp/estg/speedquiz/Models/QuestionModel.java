@@ -8,37 +8,20 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "questions_table")
+@Entity
 public class QuestionModel {
 
 
     @PrimaryKey(autoGenerate = true)
-    @NonNull
     private int id;
-
-    @Nullable
-    @ColumnInfo(name = "question")
     private String question;
-
-    @Nullable
-    @ColumnInfo(name = "optA")
     private String optA;
-
-    @ColumnInfo(name = "optB")
     private String optB;
-
-    @Nullable
-    @ColumnInfo(name = "optC")
     private String optC;
-
-    @Nullable
-    @ColumnInfo(name = "answer")
     private String answer;
-
-    @Nullable
-    @ColumnInfo(name = "points")
     private int points;
 
+    @Ignore
     public QuestionModel ( String question, String optA, String optB, String optC, String answer, int points) {
         this.question = question;
         this.optA = optA;

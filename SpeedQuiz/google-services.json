@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "864495013155",
+    "project_id": "speedquizapp-2021",
+    "storage_bucket": "speedquizapp-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864495013155:android:56d0a104a8fdf314139096",
+        "android_client_info": {
+          "package_name": "pt.ipp.estg.speedquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864495013155-avgs7hinek48tj9c3qb6mv5nf99m2pfs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8zE1eMF12KQk82z9bb9jpVwEGfajeVXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864495013155-avgs7hinek48tj9c3qb6mv5nf99m2pfs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

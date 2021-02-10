@@ -83,21 +83,7 @@ public class Quiz extends AppCompatActivity {
             }
         });
 
-        topAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick (MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.search:
-                        return true;
 
-                    case R.id.more:
-                        return true;
-
-                    default:
-                        return false;
-                }
-            }
-        });
     }
 
 

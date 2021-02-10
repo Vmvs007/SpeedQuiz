@@ -18,7 +18,7 @@ import static androidx.room.OnConflictStrategy.REPLACE;
 public interface QuestionDAO {
 
 
-    @Query("SELECT * FROM questions_table ORDER BY id ASC")
+    @Query("SELECT * FROM QuestionModel ORDER BY id ASC")
     public  LiveData<List<QuestionModel>> getQuestions () ;
 
     @Insert(onConflict = REPLACE)

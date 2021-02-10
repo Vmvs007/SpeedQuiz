@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
@@ -15,12 +16,11 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/icon"
-            style="@style/ThemeOverlay.FirebaseIcon"
-            android:layout_width="411dp"
-            android:layout_height="366dp"
-            android:contentDescription="@string/desc_firebase_lockup"
-            android:src="@drawable/sapplogo" />
+            android:id="@+id/imageView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/speedquizlogo" />
 
         <TextView
             android:id="@+id/titleText"
@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/title_bottom_margin"
             android:text="LOGIN"
-            android:textSize="40dp"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="40sp"
             android:theme="@style/ThemeOverlay.MyTitleText" />
 
         <TextView

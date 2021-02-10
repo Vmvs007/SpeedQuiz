@@ -18,20 +18,28 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import pt.ipp.estg.speedquiz.DAO.QuestionDAO;
+import pt.ipp.estg.speedquiz.DAO.UtilizadorDao;
+import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
 import pt.ipp.estg.speedquiz.Models.QuestionModel;
 import pt.ipp.estg.speedquiz.Models.Ranking;
 import pt.ipp.estg.speedquiz.Models.UserAnswer;
 
-@Database(entities = {QuestionModel.class},
+@Database(entities = {QuestionModel.class, Utilizador.class},
         version = 1, exportSchema = false)
 
 public abstract class SpeedQuizDB extends RoomDatabase {
 
-
-    private static final String DB_NAME= "SpeedQuiz_Database.db";
+    private static final String DB_NAME= "F1Database.db";
     private static SpeedQuizDB INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
+    public static final ExecutorService databaseWriteExecutor =
+            Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
+    public static void destroyInstance() {
+        INSTANCE=null;
+    }
+
+    public abstract UtilizadorDao utilizadorDao();
     public abstract QuestionDAO questionDAO();
 
     private static final Object sLock = new Object();
@@ -45,13 +53,16 @@ public abstract class SpeedQuizDB extends RoomDatabase {
      };
 
     public static SpeedQuizDB getInstance(Context context) {
-        synchronized (sLock){
-            if(INSTANCE == null) {
-                INSTANCE = Room.databaseBuilder(context.getApplicationContext(), SpeedQuizDB.class, "SpeedQuiz_Database.db").addMigrations(MIGRATION_1_2).build();
-            }
+        if(INSTANCE==null){
+            INSTANCE=Room.databaseBuilder(context.getApplicationContext(),
+                    SpeedQuizDB.class,DB_NAME)
+                    .addMigrations(MIGRATION_1_2)
+                    .fallbackToDestructiveMigration()
+                    .addCallback(sRoomDatabaseCallback)
+                    .build();
 
-            return INSTANCE;
         }
+        return INSTANCE;
     }
 
 

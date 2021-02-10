@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
@@ -61,14 +63,13 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
     SharedPreferences mUser;
     SharedPreferences.Editor mEditor;
 
-
-
     // [END declare_auth]
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mUser = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mEditor = mUser.edit();
         utilizadorViewModel= ViewModelProviders.of(FireBaseAuth.this).get(UtilizadorViewModel.class);
+        FirebaseApp.initializeApp(FireBaseAuth.this);
 
         if (user == null){
             setContentView(R.layout.activity_fire_base_auth);
@@ -121,14 +122,11 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
             t3=findViewById(R.id.textView3);
         }
         else{
-            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+            Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
             startActivity(intent);
         }
 
         super.onCreate(savedInstanceState);
-
-
-
 
 
         // Views
@@ -151,7 +149,6 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
 
 
         // [END auth_sign_out]
-
         mAuth = FirebaseAuth.getInstance();
         // [END initialize_auth]
     }
@@ -169,14 +166,14 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
 
             @Override
             public void onCancel() {
-                Toast.makeText(getApplicationContext(),"Utilizador cancelou",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Utilizador cancelou", Toast.LENGTH_LONG).show();
 
             }
 
             @Override
             public void onError(FacebookException error) {
 
-                Toast.makeText(getApplicationContext(),error.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -197,7 +194,7 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
 
                         }
                         else{
-                            Toast.makeText(getApplicationContext(),"Não é possível fazer o registo na firebase",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(),"Não é possível fazer o registo na firebase", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -252,7 +249,7 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
                                     List<Utilizador> utilList = eventList;
                                     if (!utilList.isEmpty()){
                                         mEditor.putString("name",utilList.get(0).getNome());
-                                        mEditor.putString("cont",String.valueOf(utilList.get(0).getContacto()));
+                                        mEditor.putString("cont", String.valueOf(utilList.get(0).getContacto()));
                                         mEditor.commit();
                                     }
                                 }
@@ -300,13 +297,13 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
                                     List<Utilizador> utilList = eventList;
                                     if (!utilList.isEmpty()){
                                         mEditor.putString("name",utilList.get(0).getNome());
-                                        mEditor.putString("cont",String.valueOf(utilList.get(0).getContacto()));
+                                        mEditor.putString("cont", String.valueOf(utilList.get(0).getContacto()));
                                         mEditor.commit();
                                     }
                                 }
                             });
                             //updateUI(user);
-                            Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                            Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -444,7 +441,7 @@ public class FireBaseAuth extends BasicActivity implements View.OnClickListener 
                     List<Utilizador> utilList = eventList;
                     if (!utilList.isEmpty()){
                         mEditor.putString("name",utilList.get(0).getNome());
-                        mEditor.putString("cont",String.valueOf(utilList.get(0).getContacto()));
+                        mEditor.putString("cont", String.valueOf(utilList.get(0).getContacto()));
                         mEditor.commit();
                     }
                 }

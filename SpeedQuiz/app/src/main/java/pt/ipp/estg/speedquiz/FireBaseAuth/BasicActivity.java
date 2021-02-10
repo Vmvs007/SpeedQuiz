@@ -13,6 +13,7 @@ import pt.ipp.estg.speedquiz.R;
 
 public class BasicActivity extends AppCompatActivity {
 
+
     @VisibleForTesting
     public ProgressDialog mProgressDialog;
 
@@ -44,5 +45,6 @@ public class BasicActivity extends AppCompatActivity {
         super.onStop();
         hideProgressDialog();
     }
+
 
 }

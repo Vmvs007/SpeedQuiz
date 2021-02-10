@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/grey_100"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#012222"
+            android:text="NAME  "
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#012222"
+            android:inputType="textPersonName"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/textView132"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#012222"
+
+            android:text="ADDRESS  "
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/textView142"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#012222"
+            android:inputType="textPersonName"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/textView133"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#012222"
+            android:text="BIRTH DATE  "
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/textView143"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:editable="false"
+            android:focusable="false"
+            android:textColor="#012222"
+            android:inputType="textPersonName"/>
+
+        <ImageView
+            android:id="@+id/button10"
+            android:layout_width="40dp"
+            android:layout_height="32dp"
+            app:srcCompat="@drawable/ic_date_range_black_24dp"
+            app:tint="#012222" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/textView1331"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#012222"
+            android:text="SOS CONTACT  "
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/textView1431"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#012222"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/buttons_shape"
+        android:text="EDIT"
+        android:textColor="#FFEBEE" />
+
+</LinearLayout>

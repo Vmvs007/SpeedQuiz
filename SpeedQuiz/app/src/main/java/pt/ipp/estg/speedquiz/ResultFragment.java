@@ -28,7 +28,7 @@ public class ResultFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private View mContentView;
-    private FloatingActionButton fb;
+    private FloatingActionButton fb, fn;
     private TextView txtPoints, txtCorrect, txtWrong ,numberPoints, numberCorrect, numberWrong;
 
     public ResultFragment () {
@@ -74,7 +74,9 @@ public class ResultFragment extends Fragment {
         numberPoints=mContentView.findViewById(R.id.numberPoints);
         numberCorrect=mContentView.findViewById(R.id.numberCorrect);
         numberWrong=mContentView.findViewById(R.id.numberWrong);
-        fb= mContentView.findViewById(R.id.floatingActionButtonFinish);
+        fn= mContentView.findViewById(R.id.floatingActionButtonFinish);
+        fb= mContentView.findViewById(R.id.floatingActionButtonRepeat);
+
         Log.d("Parametros", String.valueOf(mParam2));
         numberPoints.setText(mParam1);
         numberCorrect.setText(mParam2);
@@ -90,6 +92,15 @@ public class ResultFragment extends Fragment {
                         .commit();
             }
         });
+          fn.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick (View v) {
+                  getFragmentManager()
+                          .beginTransaction()
+                          .replace(R.id.fragment_container_view_tag, new HomeFragment())
+                          .commit();
+              }
+          });
 
         return mContentView;
     }
