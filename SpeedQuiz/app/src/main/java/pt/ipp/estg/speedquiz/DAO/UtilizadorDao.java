@@ -11,7 +11,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
+import pt.ipp.estg.speedquiz.Utilizador;
 
 import static androidx.room.OnConflictStrategy.REPLACE;
 

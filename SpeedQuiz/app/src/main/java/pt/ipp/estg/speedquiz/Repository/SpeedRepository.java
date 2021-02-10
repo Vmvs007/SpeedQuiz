@@ -11,8 +11,8 @@ import java.util.List;
 import pt.ipp.estg.speedquiz.DAO.QuestionDAO;
 import pt.ipp.estg.speedquiz.DAO.UtilizadorDao;
 import pt.ipp.estg.speedquiz.Database.SpeedQuizDB;
-import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
 import pt.ipp.estg.speedquiz.Models.QuestionModel;
+import pt.ipp.estg.speedquiz.Utilizador;
 
 public class SpeedRepository {
 

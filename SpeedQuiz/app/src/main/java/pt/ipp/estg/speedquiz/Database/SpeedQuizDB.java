@@ -10,23 +10,22 @@ import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
 import pt.ipp.estg.speedquiz.DAO.QuestionDAO;
 import pt.ipp.estg.speedquiz.DAO.UtilizadorDao;
-import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
 import pt.ipp.estg.speedquiz.Models.QuestionModel;
 import pt.ipp.estg.speedquiz.Models.Ranking;
 import pt.ipp.estg.speedquiz.Models.UserAnswer;
+import pt.ipp.estg.speedquiz.Utilizador;
 
 @Database(entities = {QuestionModel.class, Utilizador.class},
         version = 1, exportSchema = false)
-
 public abstract class SpeedQuizDB extends RoomDatabase {
 
     private static final String DB_NAME= "F1Database.db";
@@ -38,7 +37,6 @@ public abstract class SpeedQuizDB extends RoomDatabase {
     public static void destroyInstance() {
         INSTANCE=null;
     }
-
     public abstract UtilizadorDao utilizadorDao();
     public abstract QuestionDAO questionDAO();
 

@@ -11,9 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
-
-import pt.ipp.estg.speedquiz.FireBaseAuth.FireBaseAuth;
-import pt.ipp.estg.speedquiz.FireBaseAuth.MenuActivity;
 import pt.ipp.estg.speedquiz.Models.DriversApi.Driver;
 import pt.ipp.estg.speedquiz.Models.DriversApi.DriverInfo;
 import pt.ipp.estg.speedquiz.Services.F1_Service;
@@ -37,8 +34,9 @@ public DriverInfo drivers;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                startActivity(intent);            }
+                Intent intent1 = new Intent(getApplicationContext(), FireBaseAuth.class);
+                startActivity(intent1);
+            }
         });
 
     }
