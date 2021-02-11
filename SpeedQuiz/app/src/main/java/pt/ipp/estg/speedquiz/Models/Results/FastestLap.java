@@ -20,13 +20,11 @@ public class FastestLap {
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public FastestLap() {
     }
 
     /**
-     *
      * @param rank
      * @param lap
      * @param averageSpeed

@@ -31,8 +31,6 @@ public class TakeFragment extends Fragment {
     private TextView noEventsFound;
 
 
-
-
     private OnFragmentInteractionListener mListener;
 
     public TakeFragment() {
@@ -64,9 +62,7 @@ public class TakeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        mContext=getActivity();
-
-
+        mContext = getActivity();
 
 
     }
@@ -76,7 +72,7 @@ public class TakeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        RecyclerView.ItemDecoration itemDecoration=new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL);
+        RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(itemDecoration);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -84,10 +80,8 @@ public class TakeFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
 
 
-
         return mContentView;
     }
-
 
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -112,10 +106,9 @@ public class TakeFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
     public interface OnFragmentInteractionListener {
     }
-
-
 
 
 }

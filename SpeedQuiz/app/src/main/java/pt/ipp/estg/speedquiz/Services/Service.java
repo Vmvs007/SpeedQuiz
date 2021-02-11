@@ -3,10 +3,8 @@ package pt.ipp.estg.speedquiz.Services;
 import java.util.List;
 
 import pt.ipp.estg.speedquiz.DaysWeather;
-import pt.ipp.estg.speedquiz.Models.CircuitsApi.Circuit;
 import pt.ipp.estg.speedquiz.Models.CircuitsApi.CircuitList;
 import pt.ipp.estg.speedquiz.Models.ConstructorsApi.Constructor;
-
 import pt.ipp.estg.speedquiz.Models.DriversApi.DriverInfo;
 import pt.ipp.estg.speedquiz.Models.DriversApi.DriverTable;
 import pt.ipp.estg.speedquiz.Models.Results.ResultsList;
@@ -17,7 +15,7 @@ import retrofit2.http.Query;
 
 public interface Service {
 
-    @GET("{year}/drivers.json?limit=10")
+    @GET("{year}/drivers.json")
     Call<DriverInfo> getDriversByYear(
             @Path("year") int year);
 
@@ -50,7 +48,6 @@ public interface Service {
     @GET("drivers/{driverid}.json")
     Call<DriverInfo> getDriverById(
             @Path("driverid") String name);
-
 
 
     @GET("forecast")

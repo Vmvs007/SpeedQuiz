@@ -1,14 +1,13 @@
 package pt.ipp.estg.speedquiz;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,9 +28,9 @@ public class ResultFragment extends Fragment {
     private String mParam2;
     private View mContentView;
     private FloatingActionButton fb, fn;
-    private TextView txtPoints, txtCorrect, txtWrong ,numberPoints, numberCorrect, numberWrong;
+    private TextView txtPoints, txtCorrect, txtWrong, numberPoints, numberCorrect, numberWrong;
 
-    public ResultFragment () {
+    public ResultFragment() {
         // Required empty public constructor
     }
 
@@ -44,7 +43,7 @@ public class ResultFragment extends Fragment {
      * @return A new instance of fragment ResultFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ResultFragment newInstance (String param1, String param2) {
+    public static ResultFragment newInstance(String param1, String param2) {
         ResultFragment fragment = new ResultFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -54,7 +53,7 @@ public class ResultFragment extends Fragment {
     }
 
     @Override
-    public void onCreate (Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -63,44 +62,47 @@ public class ResultFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup container,
-                              Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mContentView = inflater.inflate(R.layout.fragment_result, container, false);
 
-        txtPoints=mContentView.findViewById(R.id.points);
-        txtCorrect=mContentView.findViewById(R.id.correct);
-        txtWrong=mContentView.findViewById(R.id.wrong);
-        numberPoints=mContentView.findViewById(R.id.numberPoints);
-        numberCorrect=mContentView.findViewById(R.id.numberCorrect);
-        numberWrong=mContentView.findViewById(R.id.numberWrong);
-        fn= mContentView.findViewById(R.id.floatingActionButtonFinish);
-        fb= mContentView.findViewById(R.id.floatingActionButtonRepeat);
+        txtPoints = mContentView.findViewById(R.id.points);
+        txtCorrect = mContentView.findViewById(R.id.correct);
+        txtWrong = mContentView.findViewById(R.id.wrong);
+        numberPoints = mContentView.findViewById(R.id.numberPoints);
+        numberCorrect = mContentView.findViewById(R.id.numberCorrect);
+        numberWrong = mContentView.findViewById(R.id.numberWrong);
+        fn = mContentView.findViewById(R.id.floatingActionButtonFinish);
+        fb = mContentView.findViewById(R.id.floatingActionButtonRepeat);
 
-        Log.d("Parametros", String.valueOf(mParam2));
+        Log.d("Parametros", mParam2);
         numberPoints.setText(mParam1);
         numberCorrect.setText(mParam2);
-        numberWrong.setText(String.valueOf(6-Integer.parseInt(mParam2)));
 
+        HomeFragment.correct = Integer.parseInt(mParam2);
+        HomeFragment.wrong = Integer.parseInt(String.valueOf(6 - Integer.parseInt(mParam2)));
 
-          fb.setOnClickListener(new View.OnClickListener() {
+        numberWrong.setText(String.valueOf(6 - Integer.parseInt(mParam2)));
+
+        fb.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick (View v) {
+            public void onClick(View v) {
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container, new QuizFragment())
                         .commit();
             }
         });
-          fn.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick (View v) {
-                  getFragmentManager()
-                          .beginTransaction()
-                          .replace(R.id.fragment_container, new HomeFragment())
-                          .commit();
-              }
-          });
+        fn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.fragment_container, new HomeFragment())
+                        .commit();
+            }
+        });
 
         return mContentView;
     }

@@ -15,7 +15,7 @@ public class UserAnswer {
     private String answer;
     private float points;
 
-    public UserAnswer (int id, String username, String question, String answer, float points) {
+    public UserAnswer(int id, String username, String question, String answer, float points) {
         this.id = id;
         this.username = username;
         this.question = question;
@@ -23,48 +23,48 @@ public class UserAnswer {
         this.points = points;
     }
 
-@Ignore
-    public UserAnswer () {
+    @Ignore
+    public UserAnswer() {
     }
 
 
-    public int getId () {
+    public int getId() {
         return id;
     }
 
-    public void setId (int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUsername () {
+    public String getUsername() {
         return username;
     }
 
-    public void setUsername (String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public String getQuestion () {
+    public String getQuestion() {
         return question;
     }
 
-    public void setQuestion (String question) {
+    public void setQuestion(String question) {
         this.question = question;
     }
 
-    public String getAnswer () {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer (String answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 
-    public float getPoints () {
+    public float getPoints() {
         return points;
     }
 
-    public void setPoints (float points) {
+    public void setPoints(float points) {
         this.points = points;
     }
 }

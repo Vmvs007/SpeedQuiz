@@ -1,13 +1,12 @@
 package pt.ipp.estg.speedquiz;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +24,7 @@ public class FragmentDetails extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentDetails () {
+    public FragmentDetails() {
         // Required empty public constructor
     }
 
@@ -38,7 +37,7 @@ public class FragmentDetails extends Fragment {
      * @return A new instance of fragment FragmentDetails.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentDetails newInstance (String param1, String param2) {
+    public static FragmentDetails newInstance(String param1, String param2) {
         FragmentDetails fragment = new FragmentDetails();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
@@ -48,7 +47,7 @@ public class FragmentDetails extends Fragment {
     }
 
     @Override
-    public void onCreate (Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -57,8 +56,8 @@ public class FragmentDetails extends Fragment {
     }
 
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup container,
-                              Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View mContentView = inflater.inflate(R.layout.fragment_details, container, false);
 
@@ -66,7 +65,6 @@ public class FragmentDetails extends Fragment {
         webView.loadUrl(mParam1);
 
 
-
-        return mContentView ;
+        return mContentView;
     }
 }

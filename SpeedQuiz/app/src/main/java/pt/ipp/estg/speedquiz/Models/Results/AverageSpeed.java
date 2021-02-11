@@ -17,7 +17,6 @@ public class AverageSpeed {
     }
 
     /**
-     *
      * @param units
      * @param speed
      */
@@ -42,7 +41,6 @@ public class AverageSpeed {
     public void setSpeed(String speed) {
         this.speed = speed;
     }
-
 
 
 }

@@ -12,19 +12,19 @@ public class CircuitTable {
     @Expose
     private List<Circuit> circuits = null;
 
-    public CircuitTable () {
+    public CircuitTable() {
     }
 
-    public CircuitTable (List<Circuit> circuits) {
+    public CircuitTable(List<Circuit> circuits) {
         this.circuits = circuits;
     }
 
 
-    public List<Circuit> getCircuits () {
+    public List<Circuit> getCircuits() {
         return circuits;
     }
 
-    public void setCircuits (List<Circuit> circuits) {
+    public void setCircuits(List<Circuit> circuits) {
         this.circuits = circuits;
     }
 }

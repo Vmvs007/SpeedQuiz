@@ -3,11 +3,8 @@ package pt.ipp.estg.speedquiz.Models.Results;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 import pt.ipp.estg.speedquiz.Models.ConstructorsApi.Constructor;
 import pt.ipp.estg.speedquiz.Models.DriversApi.Driver;
-import pt.ipp.estg.speedquiz.Models.DriversApi.DriverTable;
 
 public class Result {
 
@@ -47,13 +44,11 @@ public class Result {
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Result() {
     }
 
     /**
-     *
      * @param number
      * @param positionText
      * @param driver

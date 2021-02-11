@@ -20,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:padding="10dp"
         android:background="@color/grey_100"
+        android:padding="10dp"
         android:tint="#012222"
         app:srcCompat="@drawable/ic_person_black_24dp" />
 

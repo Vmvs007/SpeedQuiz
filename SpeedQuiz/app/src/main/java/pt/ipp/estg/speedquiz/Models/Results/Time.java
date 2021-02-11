@@ -14,13 +14,11 @@ public class Time {
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Time() {
     }
 
     /**
-     *
      * @param time
      * @param millis
      */

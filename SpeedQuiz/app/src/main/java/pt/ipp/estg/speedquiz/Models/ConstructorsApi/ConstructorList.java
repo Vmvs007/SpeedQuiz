@@ -11,15 +11,15 @@ public class ConstructorList {
     @Expose
     private MRData mRData;
 
-    public ConstructorList (MRData mRData) {
+    public ConstructorList(MRData mRData) {
         this.mRData = mRData;
     }
 
-    public MRData getmRData () {
+    public MRData getmRData() {
         return mRData;
     }
 
-    public void setmRData (MRData mRData) {
+    public void setmRData(MRData mRData) {
         this.mRData = mRData;
     }
 }

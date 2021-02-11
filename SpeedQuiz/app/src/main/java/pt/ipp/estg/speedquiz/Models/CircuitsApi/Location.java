@@ -18,11 +18,11 @@ public class Location {
     @Expose
     private String country;
 
-    public Location () {
+    public Location() {
     }
 
 
-    public Location (String lat, String _long, String locality, String country) {
+    public Location(String lat, String _long, String locality, String country) {
         this.lat = lat;
         this._long = _long;
         this.locality = locality;
@@ -30,35 +30,35 @@ public class Location {
     }
 
 
-    public String getLat () {
+    public String getLat() {
         return lat;
     }
 
-    public void setLat (String lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 
-    public String get_long () {
+    public String get_long() {
         return _long;
     }
 
-    public void set_long (String _long) {
+    public void set_long(String _long) {
         this._long = _long;
     }
 
-    public String getLocality () {
+    public String getLocality() {
         return locality;
     }
 
-    public void setLocality (String locality) {
+    public void setLocality(String locality) {
         this.locality = locality;
     }
 
-    public String getCountry () {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry (String country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 }

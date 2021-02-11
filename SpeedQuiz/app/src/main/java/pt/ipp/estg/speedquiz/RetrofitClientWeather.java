@@ -5,7 +5,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClientWeather {
-    private static final String BASE_URL="https://api.openweathermap.org/data/2.5/";
+    private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/";
     private static RetrofitClientWeather mInstance;
     private Retrofit retrofit;
 
@@ -16,14 +16,14 @@ public class RetrofitClientWeather {
                 .build();
     }
 
-    public static synchronized RetrofitClientWeather getInstance(){
-        if(mInstance==null){
-            mInstance= new RetrofitClientWeather();
+    public static synchronized RetrofitClientWeather getInstance() {
+        if (mInstance == null) {
+            mInstance = new RetrofitClientWeather();
         }
         return mInstance;
     }
 
-    public Service getApi(){
+    public Service getApi() {
         return retrofit.create(Service.class);
     }
 }

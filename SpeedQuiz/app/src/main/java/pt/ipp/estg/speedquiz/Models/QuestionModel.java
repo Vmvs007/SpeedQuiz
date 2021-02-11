@@ -1,9 +1,6 @@
 package pt.ipp.estg.speedquiz.Models;
 
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -22,7 +19,7 @@ public class QuestionModel {
     private int points;
 
     @Ignore
-    public QuestionModel ( String question, String optA, String optB, String optC, String answer, int points) {
+    public QuestionModel(String question, String optA, String optB, String optC, String answer, int points) {
         this.question = question;
         this.optA = optA;
         this.optB = optB;
@@ -32,68 +29,68 @@ public class QuestionModel {
     }
 
 
-    public QuestionModel () {
+    public QuestionModel() {
     }
 
 
-    public int getId () {
+    public int getId() {
         return id;
     }
 
-    public void setId (int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getQuestion () {
+    public String getQuestion() {
         return question;
     }
 
-    public void setQuestion (String question) {
+    public void setQuestion(String question) {
         this.question = question;
     }
 
-    public String getOptA () {
+    public String getOptA() {
         return optA;
     }
 
-    public void setOptA (String optA) {
+    public void setOptA(String optA) {
         this.optA = optA;
     }
 
-    public String getOptB () {
+    public String getOptB() {
         return optB;
     }
 
-    public void setOptB (String optB) {
+    public void setOptB(String optB) {
         this.optB = optB;
     }
 
-    public String getOptC () {
+    public String getOptC() {
         return optC;
     }
 
-    public void setOptC (String optC) {
+    public void setOptC(String optC) {
         this.optC = optC;
     }
 
-    public String getAnswer () {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer (String answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 
-    public int getPoints () {
+    public int getPoints() {
         return points;
     }
 
-    public void setPoints (int points) {
+    public void setPoints(int points) {
         this.points = points;
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return "QuestionModel{" +
                 "id_question=" + id +
                 ", question='" + question + '\'' +

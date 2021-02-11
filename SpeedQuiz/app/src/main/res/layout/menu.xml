@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey_100"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbarMenu"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#003039"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/grey_100"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarMenu"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#003039"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -40,18 +41,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        app:active_centre_button_background_color="#003039"
+        app:active_centre_button_background_color="#BA453C"
         app:active_centre_button_icon_color="@color/colorAccent"
-        app:active_item_color="#003039"
+        app:active_item_color="#BA453C"
         app:centre_button_color="@color/colorAccent"
         app:centre_button_icon="@drawable/ic_home_white_24dp"
-        app:inactive_centre_button_icon_color="@color/colorPrimary"
+        app:inactive_centre_button_icon_color="#003039"
         app:inactive_item_color="@color/colorAccent"
-        app:space_background_color="@color/colorPrimary"
+        app:space_background_color="#003039"
         app:space_item_icon_only_size="24dp"
         app:space_item_icon_size="24dp"
         app:space_item_text_size="5dp" />
-
 
 
 </RelativeLayout>

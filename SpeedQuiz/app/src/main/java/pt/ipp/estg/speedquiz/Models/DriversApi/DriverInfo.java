@@ -12,19 +12,19 @@ public class DriverInfo {
     @Expose
     private MRData mRData;
 
-    public DriverInfo () {
+    public DriverInfo() {
     }
 
-    public DriverInfo (MRData mRData) {
+    public DriverInfo(MRData mRData) {
         this.mRData = mRData;
     }
 
 
-    public MRData getmRData () {
+    public MRData getmRData() {
         return mRData;
     }
 
-    public void setmRData (MRData mRData) {
+    public void setmRData(MRData mRData) {
         this.mRData = mRData;
     }
 }

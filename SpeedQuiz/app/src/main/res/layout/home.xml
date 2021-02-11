@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/grey_100"
     android:orientation="vertical">
 
@@ -57,29 +55,21 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="12"
-        android:padding="10dp"
-        android:text="Weather Graph"
-        android:textSize="15dp"
-        android:textStyle="bold" />
-
-    <com.github.mikephil.charting.charts.LineChart
+    <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" >
+        android:layout_marginEnd="16dp">
 
-    </com.github.mikephil.charting.charts.LineChart>
+    </com.github.mikephil.charting.charts.PieChart>
 
     <Button
         android:id="@+id/driversButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="Drivers" />
 
 

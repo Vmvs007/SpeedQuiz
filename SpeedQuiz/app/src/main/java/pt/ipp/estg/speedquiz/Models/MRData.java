@@ -41,7 +41,7 @@ public class MRData {
     @Expose
     private RaceTable raceTable;
 
-    public MRData () {
+    public MRData() {
     }
 
     public MRData(String xmlns, String series, String url, String limit, String offset, String total, DriverTable driverTable) {
@@ -55,7 +55,7 @@ public class MRData {
         this.driverTable = driverTable;
     }
 
-    public MRData (String xmlns, String series, String url, String limit, String offset, String total, DriverTable driverTable, ConstructorTable constructorTable, CircuitTable circuitTable, RaceTable raceTable) {
+    public MRData(String xmlns, String series, String url, String limit, String offset, String total, DriverTable driverTable, ConstructorTable constructorTable, CircuitTable circuitTable, RaceTable raceTable) {
         this.xmlns = xmlns;
         this.series = series;
         this.url = url;
@@ -68,67 +68,67 @@ public class MRData {
         this.raceTable = raceTable;
     }
 
-    public ConstructorTable getConstructorTable () {
+    public ConstructorTable getConstructorTable() {
         return constructorTable;
     }
 
-    public void setConstructorTable (ConstructorTable constructorTable) {
+    public void setConstructorTable(ConstructorTable constructorTable) {
         this.constructorTable = constructorTable;
     }
 
-    public String getXmlns () {
+    public String getXmlns() {
         return xmlns;
     }
 
-    public void setXmlns (String xmlns) {
+    public void setXmlns(String xmlns) {
         this.xmlns = xmlns;
     }
 
-    public String getSeries () {
+    public String getSeries() {
         return series;
     }
 
-    public void setSeries (String series) {
+    public void setSeries(String series) {
         this.series = series;
     }
 
-    public String getUrl () {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl (String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
-    public String getLimit () {
+    public String getLimit() {
         return limit;
     }
 
-    public void setLimit (String limit) {
+    public void setLimit(String limit) {
         this.limit = limit;
     }
 
-    public String getOffset () {
+    public String getOffset() {
         return offset;
     }
 
-    public void setOffset (String offset) {
+    public void setOffset(String offset) {
         this.offset = offset;
     }
 
-    public String getTotal () {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal (String total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
-    public DriverTable getDriverTable () {
+    public DriverTable getDriverTable() {
         return driverTable;
     }
 
-    public void setDriverTable (DriverTable driverTable) {
+    public void setDriverTable(DriverTable driverTable) {
         this.driverTable = driverTable;
     }
 

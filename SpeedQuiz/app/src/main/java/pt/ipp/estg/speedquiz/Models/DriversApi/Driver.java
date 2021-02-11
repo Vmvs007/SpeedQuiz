@@ -3,8 +3,6 @@ package pt.ipp.estg.speedquiz.Models.DriversApi;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
-
 public class Driver {
 
     @SerializedName("driverId")
@@ -33,10 +31,10 @@ public class Driver {
     private String nationality;
 
 
-    public Driver () {
+    public Driver() {
     }
 
-    public Driver (String driverId, String permanentNumber, String code, String url, String givenName, String familyName, String dateOfBirth, String nationality) {
+    public Driver(String driverId, String permanentNumber, String code, String url, String givenName, String familyName, String dateOfBirth, String nationality) {
         this.driverId = driverId;
         this.permanentNumber = permanentNumber;
         this.code = code;
@@ -47,72 +45,72 @@ public class Driver {
         this.nationality = nationality;
     }
 
-    public String getDriverId () {
+    public String getDriverId() {
         return driverId;
     }
 
-    public void setDriverId (String driverId) {
+    public void setDriverId(String driverId) {
         this.driverId = driverId;
     }
 
-    public String getPermanentNumber () {
+    public String getPermanentNumber() {
         return permanentNumber;
     }
 
-    public void setPermanentNumber (String permanentNumber) {
+    public void setPermanentNumber(String permanentNumber) {
         this.permanentNumber = permanentNumber;
     }
 
-    public String getCode () {
+    public String getCode() {
         return code;
     }
 
-    public void setCode (String code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
-    public String getUrl () {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl (String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
-    public String getGivenName () {
+    public String getGivenName() {
         return givenName;
     }
 
-    public void setGivenName (String givenName) {
+    public void setGivenName(String givenName) {
         this.givenName = givenName;
     }
 
-    public String getFamilyName () {
+    public String getFamilyName() {
         return familyName;
     }
 
-    public void setFamilyName (String familyName) {
+    public void setFamilyName(String familyName) {
         this.familyName = familyName;
     }
 
-    public String getDateOfBirth () {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth (String dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public String getNationality () {
+    public String getNationality() {
         return nationality;
     }
 
-    public void setNationality (String nationality) {
+    public void setNationality(String nationality) {
         this.nationality = nationality;
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return "Driver{" +
                 "driverId='" + driverId + '\'' +
                 ", permanentNumber='" + permanentNumber + '\'' +

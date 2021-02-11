@@ -8,11 +8,9 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-
 import java.util.List;
 
 import pt.ipp.estg.speedquiz.FireBaseAuth.Utilizador;
-
 
 import static androidx.room.OnConflictStrategy.REPLACE;
 
@@ -29,5 +27,5 @@ public interface UtilizadorDao {
     void deleteUtilizador(Utilizador utilizador);
 
     @Update
-    void updateUtilizador (Utilizador utilizador);
+    void updateUtilizador(Utilizador utilizador);
 }

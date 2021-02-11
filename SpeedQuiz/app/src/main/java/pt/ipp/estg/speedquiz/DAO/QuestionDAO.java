@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
-import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -19,14 +18,14 @@ public interface QuestionDAO {
 
 
     @Query("SELECT * FROM QuestionModel ORDER BY id ASC")
-    public  LiveData<List<QuestionModel>> getQuestions () ;
+    public LiveData<List<QuestionModel>> getQuestions();
 
     @Insert(onConflict = REPLACE)
-    public void addQuestion (QuestionModel questionModel);
+    public void addQuestion(QuestionModel questionModel);
 
     @Delete
-    public  void deleteQuestion(QuestionModel questionModel);
+    public void deleteQuestion(QuestionModel questionModel);
 
     @Update
-    public  void updateQuestion(QuestionModel questionModel);
+    public void updateQuestion(QuestionModel questionModel);
 }

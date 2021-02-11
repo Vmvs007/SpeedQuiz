@@ -22,13 +22,12 @@ import pt.ipp.estg.speedquiz.R;
 
 public class ContactAddDialog extends AppCompatDialogFragment {
 
+    SharedPreferences mUser;
+    SharedPreferences.Editor mEditor;
     private ExampleDialogListener listener;
     private EditText edt_cont;
     private Utilizador util;
     private UtilizadorViewModel utilizadorViewModel;
-
-    SharedPreferences mUser;
-    SharedPreferences.Editor mEditor;
 
     public ContactAddDialog() {
     }
@@ -48,27 +47,23 @@ public class ContactAddDialog extends AppCompatDialogFragment {
         edt_cont = (EditText) view.findViewById(R.id.editTextDialog);
 
 
-
-
-
-
         builder.setView(view)
                 .setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(edt_cont!=null) {
-                            int cont=0;
-                            if (!edt_cont.getText().toString().equals("")){
-                                cont= Integer.valueOf(edt_cont.getText().toString());
+                        if (edt_cont != null) {
+                            int cont = 0;
+                            if (!edt_cont.getText().toString().equals("")) {
+                                cont = Integer.valueOf(edt_cont.getText().toString());
                             }
-                            util = new Utilizador("","",new Date(),cont);
+                            util = new Utilizador("", "", new Date(), cont);
 
                             //update event into the database
                             utilizadorViewModel.insert(util);
-                            mEditor.putString("name",util.getNome());
+                            mEditor.putString("name", util.getNome());
                             mEditor.putString("cont", String.valueOf(util.getContacto()));
                             mEditor.commit();
-                        }else{
+                        } else {
                             ContactAddDialog addDialog = new ContactAddDialog();
                             addDialog.show(getFragmentManager(), "add cont dialog");
                         }
@@ -76,7 +71,7 @@ public class ContactAddDialog extends AppCompatDialogFragment {
                 });
 
 
-        AlertDialog dialog=builder.create();
+        AlertDialog dialog = builder.create();
 
         dialog.show();
 

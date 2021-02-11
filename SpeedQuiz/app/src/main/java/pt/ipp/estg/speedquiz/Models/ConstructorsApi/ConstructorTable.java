@@ -11,18 +11,18 @@ public class ConstructorTable {
     @Expose
     private List<Constructor> constructors = null;
 
-    public ConstructorTable () {
+    public ConstructorTable() {
     }
 
-    public ConstructorTable (List<Constructor> constructors) {
+    public ConstructorTable(List<Constructor> constructors) {
         this.constructors = constructors;
     }
 
-    public List<Constructor> getConstructors () {
+    public List<Constructor> getConstructors() {
         return constructors;
     }
 
-    public void setConstructors (List<Constructor> constructors) {
+    public void setConstructors(List<Constructor> constructors) {
         this.constructors = constructors;
     }
 }

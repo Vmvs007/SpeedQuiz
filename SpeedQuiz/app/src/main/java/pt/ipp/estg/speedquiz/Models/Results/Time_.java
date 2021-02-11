@@ -13,7 +13,6 @@ public class Time_ {
     }
 
     /**
-     *
      * @param time
      */
     public Time_(String time) {

@@ -22,10 +22,10 @@ public class UtilizadorViewModel extends AndroidViewModel {
     public UtilizadorViewModel(@NonNull Application application) {
         super(application);
 
-        speedQuizDB= speedQuizDB.getInstance(this.getApplication());
-        speedRepository =new SpeedRepository(application);
+        speedQuizDB = speedQuizDB.getInstance(this.getApplication());
+        speedRepository = new SpeedRepository(application);
 
-        utilizadorList=speedQuizDB.utilizadorDao().getUtilizador();
+        utilizadorList = speedQuizDB.utilizadorDao().getUtilizador();
     }
 
     public LiveData<List<Utilizador>> getUtilizadorList() {
@@ -38,9 +38,15 @@ public class UtilizadorViewModel extends AndroidViewModel {
         return speedQuizDB;
     }
 
-    public void insert(Utilizador utilizador) { speedRepository.insertUtilizador(utilizador); }
+    public void insert(Utilizador utilizador) {
+        speedRepository.insertUtilizador(utilizador);
+    }
 
-    public void update(Utilizador utilizador) { speedRepository.updateUtilizador(utilizador); }
+    public void update(Utilizador utilizador) {
+        speedRepository.updateUtilizador(utilizador);
+    }
 
-    public void delete(Utilizador utilizador) { speedRepository.deleteUtilizador(utilizador); }
+    public void delete(Utilizador utilizador) {
+        speedRepository.deleteUtilizador(utilizador);
+    }
 }

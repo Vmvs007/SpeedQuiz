@@ -39,7 +39,6 @@ public class Race {
     }
 
     /**
-     *
      * @param date
      * @param circuit
      * @param round

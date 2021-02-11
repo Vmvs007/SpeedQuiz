@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "527539573679",
-    "project_id": "speedquiz-cmu",
-    "storage_bucket": "speedquiz-cmu.appspot.com"
+    "project_number": "179864221203",
+    "project_id": "speedquiz-841ca",
+    "storage_bucket": "speedquiz-841ca.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:527539573679:android:2d99b812fbd6d660b5955a",
+        "mobilesdk_app_id": "1:179864221203:android:907e999512e77bab4d71e6",
         "android_client_info": {
           "package_name": "pt.ipp.estg.speedquiz"
         }
       },
       "oauth_client": [
         {
-          "client_id": "527539573679-j21auvkefc0ambr7nhkck6jtopt8aiv6.apps.googleusercontent.com",
+          "client_id": "179864221203-efd07qkb5hda1r67arks5b87nklmn5b8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pt.ipp.estg.speedquiz",
+            "certificate_hash": "3305748d043460785de2cf3381b0c43d3dc86882"
+          }
+        },
+        {
+          "client_id": "179864221203-06ekg46811l04bqcl4vt910f70v76chn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYwk9MV5gQhufIC9RSZVXEELvmJWW8GY8"
+          "current_key": "AIzaSyCr_-8T53bQPVwkkwTcUyec00mBWtOpsp4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "527539573679-j21auvkefc0ambr7nhkck6jtopt8aiv6.apps.googleusercontent.com",
+              "client_id": "179864221203-06ekg46811l04bqcl4vt910f70v76chn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

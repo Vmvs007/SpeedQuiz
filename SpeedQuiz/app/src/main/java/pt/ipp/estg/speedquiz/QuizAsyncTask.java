@@ -15,17 +15,17 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class QuizAsyncTask extends AsyncTask<Void,Void,Void> {
+public class QuizAsyncTask extends AsyncTask<Void, Void, Void> {
 
-    private List<QuestionModel>  mTextView;
+    SpeedQuizDB sampleDatabase;
+    private List<QuestionModel> mTextView;
 
-    public QuizAsyncTask (List<QuestionModel>  mTextView) {
+    public QuizAsyncTask(List<QuestionModel> mTextView) {
         this.mTextView = mTextView;
     }
 
-    SpeedQuizDB sampleDatabase;
     @Override
-    protected void onPreExecute(){
+    protected void onPreExecute() {
         super.onPreExecute();
     }
 
@@ -36,7 +36,7 @@ public class QuizAsyncTask extends AsyncTask<Void,Void,Void> {
 //    }
 
     @Override
-    protected Void doInBackground (Void... voids) {
+    protected Void doInBackground(Void... voids) {
         Call<DriverInfo> call = F1_Service
                 .getInstance()
                 .getApi()
@@ -45,14 +45,14 @@ public class QuizAsyncTask extends AsyncTask<Void,Void,Void> {
         call.enqueue(new Callback<DriverInfo>() {
             @Override
             public void onResponse(Call<DriverInfo> call, Response<DriverInfo> response) {
-                if (response.isSuccessful()){
-                    if (response != null){
-                        QuestionModel questionModel= new QuestionModel();
+                if (response.isSuccessful()) {
+                    if (response != null) {
+                        QuestionModel questionModel = new QuestionModel();
                         Log.d("Resposta", String.valueOf(response.body().getmRData().getDriverTable().getDrivers().get(0).getUrl()));
                         List<Driver> driverList = response.body().getmRData().getDriverTable().getDrivers();
                         Log.d("Resposta", String.valueOf(driverList.size()));
                         // random_int = (int)(Math.random() * (driverList.size() - 0 + 1) + 0);
-                        String quest = "Em que data nasceu "+response.body().getmRData().getDriverTable().getDrivers().get(0).getGivenName()+ " "+response.body().getmRData().getDriverTable().getDrivers().get(0).getFamilyName()+ "?";
+                        String quest = "Em que data nasceu " + response.body().getmRData().getDriverTable().getDrivers().get(0).getGivenName() + " " + response.body().getmRData().getDriverTable().getDrivers().get(0).getFamilyName() + "?";
                         Log.d("Pergunta", quest);
 
                         questionModel.setQuestion(quest);
@@ -63,7 +63,7 @@ public class QuizAsyncTask extends AsyncTask<Void,Void,Void> {
                         questionModel.setPoints(0);
 
                         //Log.d("Model",driverList.get(0).getDateOfBirth());
-                        Log.d("Resultado da QUestao",questionModel.toString());
+                        Log.d("Resultado da QUestao", questionModel.toString());
                         mTextView.add(questionModel);
 
                         Handler handler = new Handler();

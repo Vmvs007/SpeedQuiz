@@ -22,7 +22,6 @@ public class RaceTable {
     }
 
     /**
-     *
      * @param round
      * @param races
      * @param season

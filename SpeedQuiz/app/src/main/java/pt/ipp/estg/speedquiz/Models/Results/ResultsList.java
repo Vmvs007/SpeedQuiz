@@ -12,12 +12,10 @@ public class ResultsList {
     private MRData mRData;
 
 
-
     public ResultsList() {
     }
 
     /**
-     *
      * @param mRData
      */
     public ResultsList(MRData mRData) {

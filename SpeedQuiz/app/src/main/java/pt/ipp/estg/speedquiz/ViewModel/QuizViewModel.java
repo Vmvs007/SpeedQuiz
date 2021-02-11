@@ -9,9 +9,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import pt.ipp.estg.speedquiz.DAO.QuestionDAO;
-import pt.ipp.estg.speedquiz.Database.SpeedQuizDB;
 import pt.ipp.estg.speedquiz.Models.QuestionModel;
-import pt.ipp.estg.speedquiz.Quiz;
 import pt.ipp.estg.speedquiz.Repository.SpeedRepository;
 
 public class QuizViewModel extends AndroidViewModel {
@@ -22,11 +20,11 @@ public class QuizViewModel extends AndroidViewModel {
 
     private QuestionDAO questionDAO;
 
-    public QuizViewModel (@NonNull Application application) {
+    public QuizViewModel(@NonNull Application application) {
         super(application);
         //questionDAO= SpeedQuizDB.getInstance(application).questionDAO();
         speedRepository = new SpeedRepository(application);
-        listLiveData=speedRepository.getqListLiveData();
+        listLiveData = speedRepository.getqListLiveData();
 
     }
 
@@ -37,5 +35,7 @@ public class QuizViewModel extends AndroidViewModel {
     }
 
 
-    public void insert(QuestionModel questionModel) { speedRepository.insert(questionModel); }
+    public void insert(QuestionModel questionModel) {
+        speedRepository.insert(questionModel);
+    }
 }

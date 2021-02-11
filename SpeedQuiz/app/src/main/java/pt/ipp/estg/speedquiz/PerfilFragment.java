@@ -30,40 +30,41 @@ public class PerfilFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    SharedPreferences mUser;
+    SharedPreferences.Editor mEditor;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private Context mContext;
-
     private View mContentView;
-
     private DatePickerDialog datePickerDialog;
-
     private Calendar calendar;
-
     private Date date;
-
     private EditText edBirth;
     private EditText edName;
     private EditText edAddress;
     private EditText edCont;
     private Button cl;
     private Button edit;
-
     private List<Utilizador> utilList;
     private UtilizadorViewModel utilizadorViewModel;
     private Utilizador util;
-
-    SharedPreferences mUser;
-    SharedPreferences.Editor mEditor;
-
-
-
-
-
     private OnFragmentInteractionListener mListener;
+    private DatePickerDialog.OnDateSetListener dateSetListener =
+            new DatePickerDialog.OnDateSetListener() {
+                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                    calendar.set(Calendar.YEAR, year);
+                    calendar.set(Calendar.MONTH, month);
+                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                    date = calendar.getTime();
+                    // edBirth.setText(date.toLocaleString().substring(0, 12));
+                    String myFormat = "dd/MM/YYYY"; //In which you need put here
+                    SimpleDateFormat sdf = new SimpleDateFormat(myFormat);
+
+                    edBirth.setText(sdf.format(calendar.getTime()));
+
+                }
+            };
 
     public PerfilFragment() {
         // Required empty public constructor
@@ -94,9 +95,7 @@ public class PerfilFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        mContext=getActivity();
-
-
+        mContext = getActivity();
 
 
     }
@@ -107,33 +106,33 @@ public class PerfilFragment extends Fragment {
         // Inflate the layout for this fragment
 
         mContentView = inflater.inflate(R.layout.perfil, container, false);
-        utilizadorViewModel= ViewModelProviders.of(this).get(UtilizadorViewModel.class);
+        utilizadorViewModel = ViewModelProviders.of(this).get(UtilizadorViewModel.class);
         mUser = PreferenceManager.getDefaultSharedPreferences(mContext);
         mEditor = mUser.edit();
 
 
-        edBirth=mContentView.findViewById(R.id.textView143);
-        edName=mContentView.findViewById(R.id.textView14);
-        edAddress=mContentView.findViewById(R.id.textView142);
-        edCont=mContentView.findViewById(R.id.textView1431);
-        cl=mContentView.findViewById(R.id.button10);
-        edit=mContentView.findViewById(R.id.button8);
-        calendar= Calendar.getInstance();
+        edBirth = mContentView.findViewById(R.id.textView143);
+        edName = mContentView.findViewById(R.id.textView14);
+        edAddress = mContentView.findViewById(R.id.textView142);
+        edCont = mContentView.findViewById(R.id.textView1431);
+        cl = mContentView.findViewById(R.id.button10);
+        edit = mContentView.findViewById(R.id.button8);
+        calendar = Calendar.getInstance();
 
         utilizadorViewModel.getUtilizadorList().observe(getViewLifecycleOwner(), new Observer<List<Utilizador>>() {
             @Override
             public void onChanged(List<Utilizador> eventList) {
                 utilList = eventList;
 
-                for(Utilizador u:utilList){
-                    util=u;
+                for (Utilizador u : utilList) {
+                    util = u;
                 }
 
                 edBirth.setText(String.valueOf(util.getData_nascimento()));
                 edName.setText(util.getNome());
                 edAddress.setText(util.getMorada());
                 edCont.setText(String.valueOf(util.getContacto()));
-                date=util.getData_nascimento();
+                date = util.getData_nascimento();
 
                 edit.setOnClickListener(new View.OnClickListener() {
 
@@ -146,7 +145,7 @@ public class PerfilFragment extends Fragment {
 
                         utilizadorViewModel.update(util);
                         Toast.makeText(mContext, "EDITED!", Toast.LENGTH_SHORT).show();
-                        mEditor.putString("name",util.getNome());
+                        mEditor.putString("name", util.getNome());
                         mEditor.putString("cont", String.valueOf(util.getContacto()));
                         mEditor.commit();
                     }
@@ -155,10 +154,7 @@ public class PerfilFragment extends Fragment {
         });
 
 
-
-
-
-        datePickerDialog = new DatePickerDialog(mContext, R.style.DialogTheme,dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog = new DatePickerDialog(mContext, R.style.DialogTheme, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
 
         edBirth.setOnClickListener(new View.OnClickListener() {
 
@@ -176,30 +172,8 @@ public class PerfilFragment extends Fragment {
         });
 
 
-
-
-
         return mContentView;
     }
-
-    private DatePickerDialog.OnDateSetListener dateSetListener =
-            new DatePickerDialog.OnDateSetListener() {
-                public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                    calendar.set(Calendar.YEAR, year);
-                    calendar.set(Calendar.MONTH, month);
-                    calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                    date = calendar.getTime();
-                    // edBirth.setText(date.toLocaleString().substring(0, 12));
-                    String myFormat = "dd/MM/YYYY"; //In which you need put here
-                    SimpleDateFormat sdf = new SimpleDateFormat(myFormat);
-
-                    edBirth.setText(sdf.format(calendar.getTime()));
-
-                }
-            };
-
-
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(String notif) {
@@ -223,10 +197,10 @@ public class PerfilFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
     public interface OnFragmentInteractionListener {
         void onButtonclick(String notif);
     }
-
 
 
 }
